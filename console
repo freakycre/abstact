@@ -1,0 +1,24 @@
+
+const buttons = document.querySelectorAll('button');
+
+
+buttons.forEach(button => {
+  const buttonText = button.innerText.trim();
+
+
+  const clickEvent = new MouseEvent('click', {
+    bubbles: true,
+    cancelable: true
+  });
+
+
+  button.addEventListener('click', (event) => {
+    event.preventDefault(); // Ngăn chuyển trang
+  });
+
+
+  if (buttonText === "Let's go" || buttonText === "Verify" || buttonText === "Like" || buttonText === "Retweet" || buttonText === "Follow") {
+
+    button.dispatchEvent(clickEvent);
+  }
+});
